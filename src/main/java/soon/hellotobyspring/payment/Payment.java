@@ -1,4 +1,4 @@
-package soon.hellotobyspring;
+package soon.hellotobyspring.payment;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

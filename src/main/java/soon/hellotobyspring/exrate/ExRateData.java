@@ -1,4 +1,4 @@
-package soon.hellotobyspring;
+package soon.hellotobyspring.exrate;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.math.BigDecimal;

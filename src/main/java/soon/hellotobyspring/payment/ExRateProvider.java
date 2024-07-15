@@ -1,4 +1,4 @@
-package soon.hellotobyspring;
+package soon.hellotobyspring.payment;
 
 import java.io.IOException;
 import java.math.BigDecimal;
