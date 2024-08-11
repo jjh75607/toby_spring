@@ -10,7 +10,7 @@ public class CachedExRateProvider implements ExRateProvider {
     private final ExRateProvider target;
 
     private BigDecimal cachedExRate;
-    private LocalDateTime cacheExpiryTime;
+    private LocalDateTime cachedExpiryTime;
 
     public CachedExRateProvider(ExRateProvider target) {
         this.target = target;
@@ -18,11 +18,11 @@ public class CachedExRateProvider implements ExRateProvider {
 
     @Override
     public BigDecimal getExRate(String currency) throws IOException {
-        if (cachedExRate == null || cacheExpiryTime.isBefore(LocalDateTime.now())) {
+        if (cachedExRate == null || cachedExpiryTime.isBefore(LocalDateTime.now())) {
             cachedExRate = this.target.getExRate(currency);
-            cacheExpiryTime = LocalDateTime.now().plusSeconds(3);
+            cachedExpiryTime = LocalDateTime.now().plusSeconds(3);
 
-            System.out.println("Cache Update");
+            System.out.println("Cache Updated");
         }
 
         return cachedExRate;

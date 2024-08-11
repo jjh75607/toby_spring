@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import soon.hellotobyspring.payment.ExRateProvider;
 
-public class SimpleExRateProvider implements ExRateProvider {
+public class SimpleExRatePaymentProvider implements ExRateProvider {
 
     @Override
     public BigDecimal getExRate(String currency) throws IOException {
@@ -12,6 +12,6 @@ public class SimpleExRateProvider implements ExRateProvider {
             return BigDecimal.valueOf(1000);
         }
 
-        throw new IllegalArgumentException("지원되지 않는 통화입니다");
+        throw new IllegalArgumentException("지원되지 않는 통화입니다.");
     }
 }
